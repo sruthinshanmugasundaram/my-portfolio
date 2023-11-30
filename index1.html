@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #homemobileMenu {
+            display: none; /* Initially hide the mobile menu button on larger screens */
+        }
+
+        .homenav-list {
+            display: block; /* Display the navigation menu as a block on larger screens */
+        }
+
+        @media screen and (max-width: 600px) {
+            #homemobileMenu {
+                display: block; /* Display the mobile menu button on smaller screens */
+                cursor: pointer;
+            }
+
+            .homenav-list {
+                display: none; /* Hide the navigation menu on smaller screens */
+            }
+
+            .homenav-list.show {
+                display: block; /* Show the navigation menu when the mobile menu is toggled */
+            }
+        }
+
+        .homenav-list ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+
+        .homenav-list ul li {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .homenav-list ul li a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div id="homemobileMenu" class="home-mobile-menu" onclick="toggleMenu()">&#9776; Menu</div>
+
+<nav class="homenav-list">
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#technical-skills">Technical Skills</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#blog">Blog</a></li>
+    </ul>
+</nav>
+
+<script>
+    function toggleMenu() {
+        var navList = document.querySelector('.homenav-list');
+        navList.classList.toggle('show');
+    }
+</script>
+
+</body>
+</html>
